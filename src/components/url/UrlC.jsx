@@ -60,7 +60,6 @@ export const UrlC = () => {
       });
 
       const data = await res.json();
-      console.log("Respuesta del backend:", data);
 
       if (res.ok && data.shortUrl) {
         setResData({ shortUrl: data.shortUrl });
