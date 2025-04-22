@@ -60,8 +60,10 @@ export const UrlC = () => {
       });
 
       const data = await res.json();
+      console.log("Respuesta del backend:", data);
+
       if (res.ok && data.shortUrl) {
-        setResData(data);
+        setResData({ shortUrl: data.shortUrl });
         setToastMessage("✅ ¡Tu URL fue acortada con éxito!");
         setToastType("success");
         setShowToast(true);
