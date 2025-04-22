@@ -134,7 +134,7 @@ export const UrlC = () => {
         onClose={() => setShowToast(false)}
         delay={3000}
         autohide
-        className={`position-fixed bottom-0 end-0 m-3 custom-message toast-${toastType}`}
+        className={` custom-message toast-${toastType}`}
       >
         <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>

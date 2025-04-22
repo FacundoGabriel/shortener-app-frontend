@@ -1,48 +1,63 @@
 .custom-message {
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 500;
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    min-width: 400px;
-    font-size: 16px;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  min-width: 400px; /* Cambié de 400px a 300px para pantallas pequeñas */
+  /* font-size: 16px; */
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
-  
+
+.toast-body {
+  color: #fff;
+}
+
 .toast-success {
-    background-color: #198754;
-    border-left: 6px solid #146c43;
+  background-color: #198754 !important;
+  border-left: 6px solid #146c43 !important;
 }
-  
+
 .toast-error {
-    background-color: #dc3545;
-    border-left: 6px solid #a71d2a;
-    font-size: 15px;
+  background-color: #dc3545 !important;
+  border-left: 6px solid #a71d2a !important;
+  font-size: 15px !important;
 }
-  
-  .toast-info {
-    background-color: #0d6efd;
-    border-left: 6px solid #084298;
-  }
+
+.toast-info {
+  background-color: #0d6efd !important;
+  border-left: 6px solid #084298 !important;
+}
 
 .copy-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ccc;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: color 0.2s ease;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
 }
-  
+
 .copy-icon:hover {
-    color: #fff;
+  color: #fff;
 }
-  
+
 .copied-border {
-    border: 2px solid #084298 !important;
-    transition: border 0.3s ease;
+  border: 2px solid #084298 !important;
+  transition: border 0.3s ease;
 }
-  
+
 .no-text-highlight::selection {
-    background: transparent;
+  background: transparent;
+}
+
+@media (max-width: 430px) {
+  .custom-message {
+    position: absolute;
+    bottom: 0;
+    min-width: 300px;
+    font-size: 12px;
+  }
 }
