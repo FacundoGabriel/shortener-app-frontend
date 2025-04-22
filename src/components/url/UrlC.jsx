@@ -36,8 +36,7 @@ export const UrlC = () => {
     return () => clearInterval(interval);
   }, [index, reverse]);
 
-  const API_URL = import.meta.env.VITE_API_URL;
-  console.log("API URL:", API_URL);
+  const API_URL = "https://shortener-app-backend.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
