@@ -49,7 +49,7 @@ export const UrlC = () => {
     }
 
     try {
-      const res = await fetch(`${API_URL}/shorten`, {
+      const res = await fetch(`${API_URL}/link/shorten`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
