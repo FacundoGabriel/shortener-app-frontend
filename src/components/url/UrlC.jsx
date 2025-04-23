@@ -129,7 +129,10 @@ export const UrlC = () => {
                   onClick={handleCopy}
                   title="Copiar"
                 />
-                <div
+
+              </div>
+
+              <div
                   className="col-12 col-md-6 col-lg-6 msg-demo mx-auto "
                   role="alert"
                 >
@@ -139,7 +142,6 @@ export const UrlC = () => {
                   página (Netlify). Con un dominio propio y más corto, los links
                   lucirían mucho más breves como en un acortador real.
                 </div>
-              </div>
             </div>
           )}
         </div>
