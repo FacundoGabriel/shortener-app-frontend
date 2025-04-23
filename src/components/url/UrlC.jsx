@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, Button, Toast } from "react-bootstrap";
 import { FaClipboard } from "react-icons/fa";
-import './UrlC.css'
+import "./UrlC.css";
 
 export const UrlC = () => {
   const [url, setUrl] = useState("");
@@ -13,7 +13,8 @@ export const UrlC = () => {
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState("info");
-    
+  const [cargando, setCargando] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (!reverse) {
@@ -48,6 +49,8 @@ export const UrlC = () => {
       return;
     }
 
+    setCargando(true);
+
     try {
       const res = await fetch(`${API_URL}/link/shorten`, {
         method: "POST",
@@ -76,6 +79,8 @@ export const UrlC = () => {
       console.error("Error al enviar la URL:", error);
       setToastMessage("Ocurrió un error al acortar la URL.");
       setShowToast(true);
+    } finally {
+      setCargando(false);
     }
   };
 
@@ -101,6 +106,7 @@ export const UrlC = () => {
               onChange={(e) => setUrl(e.target.value)}
               className="me-2 custom-input"
             />
+
             <Button variant="primary" type="submit">
               Acortar
             </Button>
@@ -128,6 +134,16 @@ export const UrlC = () => {
           )}
         </div>
       </div>
+
+      {cargando && (
+        <div className="text-center mt-4 text-primary">
+          <span
+            className="spinner-border spinner-border-sm me-2"
+            role="status"
+          />
+          Generando enlace...
+        </div>
+      )}
 
       <Toast
         show={showToast}
